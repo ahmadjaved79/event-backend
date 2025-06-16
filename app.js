@@ -11,6 +11,9 @@ app.use(express.json());
 const eventRoutes = require("./routes/eventRoutes");
 app.use("/api/events", eventRoutes);
 
+const authRoutes = require("./routes/authRoutes");
+app.use("/api/auth", authRoutes); // 👈 this is critical
+
 // Default route
 app.get("/", (req, res) => {
   res.send("Backend is working");
